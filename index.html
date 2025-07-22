@@ -8,7 +8,7 @@
     <title>ZOMAXA | Premium Digital Solutions</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22> @ </text></svg>">
     <style>
         /* Global Styles */
         :root {
@@ -811,6 +811,8 @@
                 padding: 20px 0;
                 gap: 15px;
                 border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+                 align-items: center;
+        text-align: center;
             }
             
             .nav-links.active {
@@ -891,25 +893,150 @@
                 font-size: 2rem;
             }
         }
+        /* Contact & Affiliate Form Styles */
+/* filepath: c:\Users\ALI\OneDrive\Documents\Web-dev-projects\price-zomaxa\index.html */
+.contact-form-container,
+.form-container {
+    background: rgba(20, 20, 20, 0.85);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    padding: 40px 30px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form,
+.affiliate-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full-width {
+    width: 100%;
+}
+
+.form-group label {
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 4px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.form-control,
+.contact-form input,
+.contact-form select,
+.contact-form textarea,
+.affiliate-form input,
+.affiliate-form select,
+.affiliate-form textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: 5px;
+    padding: 12px 14px;
+    color: var(--white);
+    font-size: 1rem;
+    transition: border 0.3s;
+    outline: none;
+    width: 100%;
+    resize: none;
+}
+
+.form-control:focus,
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus,
+.affiliate-form input:focus,
+.affiliate-form select:focus,
+.affiliate-form textarea:focus {
+    border-color: var(--gold);
+    background: rgba(255,255,255,0.09);
+}
+
+.contact-form select,
+.affiliate-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg width='16' height='16' fill='gold' xmlns='http://www.w3.org/2000/svg'><path d='M4 6l4 4 4-4'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px 18px;
+    padding-right: 36px;
+}
+
+.form-submit,
+.submit-button {
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    border-radius: 5px;
+    padding: 14px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    margin-top: 10px;
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.08);
+    letter-spacing: 1px;
+}
+
+.form-submit:hover,
+.submit-button:hover {
+    background: var(--black);
+    color: var(--gold);
+    border: 1px solid var(--gold);
+}
+
+@media (max-width: 600px) {
+    .contact-form-container,
+    .form-container {
+        padding: 20px 8px;
+    }
+    .contact-form,
+    .affiliate-form {
+        gap: 14px;
+    }
+}
+label[for="package"] {
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 4px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+.contact-form select:focus,
+.contact-form select option {
+    background: rgba(20, 20, 20, 0.95);
+    color: var(--white);
+}
     </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header" id="header">
         <div class="container header-container">
-            <a href="#" class="logo">ZOMAXA</a>
+            <a href="#header" class="logo">ZOMAXA</a>
             <nav class="nav-links" id="navLinks">
                 <a href="#pricing">Pricing</a>
                 <a href="#addons">Add-ons</a>
                 <a href="#testimonials">Testimonials</a>
                 <a href="#contact">Contact</a>
+                 <a href="affiliate.html" style="color:var(--gold);font-weight:600;">Affiliate</a>
             </nav>
             <button class="mobile-toggle" id="mobileToggle">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </header>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -952,19 +1079,19 @@
                     <h3>Starter Plan</h3>
                     <div class="plan-tag">Perfect for new businesses starting online</div>
                     <div class="pricing-cost">
-                        <div class="one-time-cost">₹4,999 One-Time</div>
+                        <div class="one-time-cost">₹5,999 One-Time</div>
                         <div class="monthly-cost">+ ₹499/month</div>
                     </div>
                     
                     <div class="free-maintenance">
-                        <i class="fas fa-gift"></i> 3 Months Maintenance Free
+                        <i class="fas fa-gift"></i> 1 Months Maintenance Free
                     </div>
                     
                     <ul>
                         <li><i class="fas fa-check-circle"></i> 1 Page Website (Landing or Bio Page)</li>
                         <li><i class="fas fa-check-circle"></i> WhatsApp Chat Integration</li>
                         <li><i class="fas fa-check-circle"></i> Mobile-Optimized Design</li>
-                        <li><i class="fas fa-check-circle"></i> 1 Round of Revisions</li>
+                        <li><i class="fas fa-check-circle"></i> Clean user interface</li>
                         <li><i class="fas fa-check-circle"></i> Basic Contact Form</li>
                     </ul>
                     <div class="hosting-option">
@@ -985,7 +1112,7 @@
                     </div>
                     
                     <div class="free-maintenance">
-                        <i class="fas fa-gift"></i> 3 Months Maintenance Free
+                        <i class="fas fa-gift"></i> 2 Months Maintenance Free
                     </div>
                     
                     <ul>
@@ -1012,7 +1139,9 @@
                         <div class="one-time-cost">₹19,999 One-Time</div>
                         <div class="monthly-cost">+ ₹1,499/month</div>
                     </div>
-                    
+                    <div style="color:var(--gray); font-size:0.98rem; margin-top:8px;">
+        <i class="fas fa-info-circle"></i> Price may vary depending on website requirements.
+    </div> 
                     <div class="free-maintenance">
                         <i class="fas fa-gift"></i> 3 Months Maintenance Free
                     </div>
@@ -1091,10 +1220,10 @@
                         "ZOMAXA transformed our online presence completely. Our conversion rate increased by 65% within the first month after launching our new website. The team is professional, responsive, and truly understands business needs."
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">RS</div>
+                        <div class="author-avatar">CB</div>
                         <div class="author-info">
-                            <h4>Raj Sharma</h4>
-                            <p>Founder, Elegant Furnishings</p>
+                            <h4>Cake bites</h4>
+                            <p>Baker</p>
                         </div>
                     </div>
                 </div>
@@ -1104,10 +1233,10 @@
                         "We chose the Business Plan and couldn't be happier. The attention to detail in design and the seamless WhatsApp integration has helped us connect with customers like never before. Our inquiries have tripled!"
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">PS</div>
+                        <div class="author-avatar">C</div>
                         <div class="author-info">
-                            <h4>Priya Singh</h4>
-                            <p>Owner, The Craft Boutique</p>
+                            <h4>Cosmatrix</h4>
+                            <p>Skincare retailer</p>
                         </div>
                     </div>
                 </div>
@@ -1117,10 +1246,10 @@
                         "The eCommerce package was worth every rupee. Setting up our online store was effortless with ZOMAXA. The WhatsApp order system has simplified our operations and increased sales by 40%. Highly recommended!"
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">AK</div>
+                        <div class="author-avatar">ST</div>
                         <div class="author-info">
-                            <h4>Anil Kumar</h4>
-                            <p>Director, Organic Harvest</p>
+                            <h4>Shaa trading</h4>
+                            <p>Skncare wholesaler</p>
                         </div>
                     </div>
                 </div>
@@ -1128,6 +1257,59 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Get In Touch</h2>
+                <div class="gold-divider"></div>
+                <p>Have questions or ready to start your project? We'd love to hear from you.</p>
+            </div>
+            
+            <div class="contact-form-container fade-in">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/xeozaakr" method="POST">
+    <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" class="form-control" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" class="form-control" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" class="form-control" name="phone">
+    </div>
+    <div class="form-group">
+        <label for="package">Interested Package</label>
+        <select id="package" class="form-control" name="package">
+            <option value="">Select a package</option>
+            <option value="starter">Starter Plan</option>
+            <option value="business">Business Plan</option>
+            <option value="ecommerce">E-Commerce Plan</option>
+            <option value="custom">Custom Solution</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="addons">Add ons</label>
+        <select id="addons" class="form-control" name="addons">
+            <option value="">Select Add-ons</option>
+            <option value="logo">Logo Design</option>
+            <option value="copywriting">Copywriting</option>
+            <option value="ecommerce-integration">E-Commerce Integration</option>
+            <option value="extra-pages">Extra Pages</option>
+        </select>
+    </div>
+    <div class="form-group full-width">
+        <label for="affiliate">Affiliate Code (if any)</label>
+        <input type="text" id="affiliate" class="form-control" name="affiliate" placeholder="Enter your affiliate code">
+    </div>
+    <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" class="form-control" name="message" required></textarea>
+    </div>
+    <button type="submit" class="form-submit" name="submit">Send Message</button>
+</form>
     <!-- CTA Section -->
     <section class="section" id="contact">
         <div class="container">
@@ -1254,6 +1436,7 @@
                 });
             });
         });
+        
     </script>
 </body>
-</html>
+</html> 
